@@ -90,3 +90,11 @@ h2{
 .text-thr{
     text-decoration: line-through;
 }
+thead{
+    background-color: var(--blue);
+}
+td{
+    padding: 5px;
+    border: 1px solid var(--light-gray);
+    text-align: center;
+}

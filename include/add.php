@@ -43,6 +43,12 @@ if ($_POST['action'] == 'add' && $_POST['table']) {
             $sth = $dbh->prepare($sql);
             $res = $sth->execute(array('uid' => $_POST['uid'], 'pid' => $_POST['pid'], 'sid' => $_POST['sid'], 'cid' => $_POST['cid'], 'count' => $_POST['count']));
             break;
+
+        case 'orders':
+            $sql = "INSERT INTO {$_POST['table']}(`id_user`,`id_product`,`id_size`,`id_color`,`count`,`price_for_one`,`price`,`address`,`status`) VALUES (:uid, :pid, :sid, :cid, :count, :pfo, :price, :addr, :status)";
+            $sth = $dbh->prepare($sql);
+            $res = $sth->execute(array('uid' => $_POST['uid'], 'pid' => $_POST['pid'], 'sid' => $_POST['sid'], 'cid' => $_POST['cid'], 'count' => $_POST['count'], 'pfo' => $_POST['pfo'], 'price' => $_POST['price'], 'addr' => $_POST['addr'], 'status' => $_POST['status']));
+            break;
     }
     if ($res) {
         echo 'Запись добавлена!';

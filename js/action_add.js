@@ -72,6 +72,27 @@ function action_add(table) {
             arr.cid = cart_cid;
             arr.count = cart_count;
             break;
+
+        case 'orders':
+            let order_uid = prompt('id пользователя:');
+            let order_pid = prompt('id товара:');
+            let order_sid = prompt('id размера:');
+            let order_cid = prompt('id цвета:');
+            let order_count = prompt('Кол-во:');
+            let order_priceForOne = prompt('Цена за единицу товара:');
+            let order_price = prompt('Общая цена:');
+            let order_addr = prompt('Адрес доставки:');
+            let order_status = prompt('Статус:');
+            arr.uid = order_uid;
+            arr.pid = order_pid;
+            arr.sid = order_sid;
+            arr.cid = order_cid;
+            arr.count = order_count;
+            arr.pfo = order_priceForOne;
+            arr.price = order_price;
+            arr.addr = order_addr;
+            arr.status = order_status;
+            break;
     }
 
     $.post('server', arr, function (e) { alert(e) });
