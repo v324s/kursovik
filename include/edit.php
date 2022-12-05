@@ -17,9 +17,6 @@ if ($_POST['action'] == 'edit' && $_POST['table'] && $_POST['id']) {
                 $sql .= "`name`=:name";
                 $arr['name'] = $_POST['name'];
             }
-            // if ($_POST['name'] && $_POST['idcategory']) {
-            //     $sql .= ", ";
-            // }
             if ($_POST['idcategory']) {
                 if ($need_comma) {
                     $sql .= ", ";
@@ -27,7 +24,6 @@ if ($_POST['action'] == 'edit' && $_POST['table'] && $_POST['id']) {
                 $sql .= "`id_category`=:idcategory";
                 $arr['idcategory'] = $_POST['idcategory'];
             }
-            // $_POST['name'] && $_POST['idcategory'] ? $sql .=", " : "";
             $sql .= " WHERE `id`=:id";
             $sth = $dbh->prepare($sql);
             $res = $sth->execute($arr);
@@ -46,9 +42,6 @@ if ($_POST['action'] == 'edit' && $_POST['table'] && $_POST['id']) {
             break;
 
         case 'users':
-            // 1 - action
-            // 2 - table
-            // 3 - id 
             $need_comma=false;
             $arr = array();
             $arr['id'] = $_POST['id'];
@@ -93,16 +86,12 @@ if ($_POST['action'] == 'edit' && $_POST['table'] && $_POST['id']) {
                 $sql .= "`address`=:addr";
                 $arr['addr'] = $_POST['addr'];
             }
-            // $_POST['name'] && $_POST['idcategory'] ? $sql .=", " : "";
             $sql .= " WHERE `id`=:id";
             $sth = $dbh->prepare($sql);
             $res = $sth->execute($arr);
             break;
 
             case 'products':
-                // 1 - action
-                // 2 - table
-                // 3 - id 
                 $need_comma=false;
                 $arr = array();
                 $arr['id'] = $_POST['id'];
@@ -168,16 +157,12 @@ if ($_POST['action'] == 'edit' && $_POST['table'] && $_POST['id']) {
                     $sql .= "`count`=:count";
                     $arr['count'] = $_POST['count'];
                 }
-                // $_POST['name'] && $_POST['idcategory'] ? $sql .=", " : "";
                 $sql .= " WHERE `id`=:id";
                 $sth = $dbh->prepare($sql);
                 $res = $sth->execute($arr);
                 break;
         
                 case 'users':
-                    // 1 - action
-                    // 2 - table
-                    // 3 - id 
                     $need_comma=false;
                     $arr = array();
                     $arr['id'] = $_POST['id'];
