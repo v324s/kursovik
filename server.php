@@ -1,6 +1,7 @@
 <?
 try {
-    $dbh = new PDO('mysql:dbname=ucheba_2_inet_magaz;host=127.0.0.1', 'root', 'root',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+    // $dbh = new PDO('mysql:dbname=ucheba_2_inet_magaz;host=127.0.0.1', 'root', 'root',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+    $dbh = new PDO('mysql:dbname=ucheba_2_inet_magaz;host=127.0.0.1', 'root', 'root');
 } catch (PDOException $e) {
     die($e->getMessage());
 }
