@@ -279,8 +279,8 @@ if ($_POST['action'] == 'edit' && $_POST['table'] && $_POST['id']) {
                     
                     
     }
-    echo ($sql);
-    print_r($arr);
+    // echo ($sql);
+    // print_r($arr);
     if ($res) {
         echo 'Запись отредактирована!';
     } else {

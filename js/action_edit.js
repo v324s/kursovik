@@ -11,7 +11,7 @@ function action_edit(table, id) {
                 break;
 
             case 'subcategory':
-                let subcategory_name = prompt('Новое имя категории:');
+                let subcategory_name = prompt('Новое имя подкатегории:');
                 arr.name = subcategory_name;
                 let subcategory_category = prompt('id категории в которую входит данная подкатегория:');
                 arr.idcategory = subcategory_category;
